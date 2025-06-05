@@ -24,7 +24,10 @@ const config = {
   onBrokenAnchors: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: undefined,
-
+  customFields: {
+    // 告诉 Docusaurus 不要传递 --max_old_space_size
+    disableWorkerThreads: true,
+  },
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
