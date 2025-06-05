@@ -1,8 +1,8 @@
 module.exports = async function favIcon(context) {
   return {
+    name: 'docusaurus-osano-plugin',
     injectHtmlTags({ content }) {
       return {
-        name: 'docusaurus-osano-plugin',
         headTags: [
           {
             tagName: 'script',

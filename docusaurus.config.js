@@ -99,17 +99,22 @@ const config = {
     'docusaurus-plugin-sass',
     require.resolve('docusaurus-plugin-image-zoom'),
     // ....
-    async function myPlugin(context, options) {
-      return {
-        name: 'docusaurus-tailwindcss',
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require('tailwindcss'))
-          postcssOptions.plugins.push(require('autoprefixer'))
-          return postcssOptions
-        },
+    [
+      async function tailwindPlugin(context, options) {
+        return {
+          name: 'docusaurus-tailwindcss',
+          configurePostCss(postcssOptions) {
+            // Appends TailwindCSS and AutoPrefixer.
+            postcssOptions.plugins.push(require('tailwindcss'))
+            postcssOptions.plugins.push(require('autoprefixer'))
+            return postcssOptions
+          },
+        }
+      },
+      {
+        name: 'docusaurus-tailwindcss'
       }
-    },
+    ],
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
