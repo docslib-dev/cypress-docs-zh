@@ -7,7 +7,7 @@
     "postinstall": "patch-package",
     "prestart": "node ./scripts/checkRemarkPluginsBuild.js",
     "start": "docusaurus start",
-    "prebuild": "rm -rf dist && npm run build:plugins",
+    "prebuild": "npm run build:plugins",
     "build": "docusaurus build --out-dir dist",
     "build:plugins": "npm --prefix ./plugins/cypressRemarkPlugins run build",
     "lint": "npm run lint:markdown",
@@ -40,12 +40,14 @@
     "clsx": "^2.1.0",
     "docusaurus-plugin-image-zoom": "^2.0.0",
     "docusaurus-plugin-sass": "0.2.5",
+    "mdast": "3.0.0",
     "postcss": "^8.4.34",
     "prism-react-renderer": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark-directive": "^3.0.0",
-    "sass": "^1.70.0"
+    "sass": "^1.70.0",
+    "unist-util-visit": "3.1.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.1.1",
@@ -54,7 +56,7 @@
     "cypress": "^13.15.0",
     "node-fetch": "^3.3.2",
     "patch-package": "^8.0.0",
-    "prettier": "^3.2.5",
+    "prettier": "3.5.3",
     "typescript": "^5.3.3",
     "wait-on": "^8.0.1"
   },
